@@ -1,0 +1,42 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  Exclude: 
+    - "assets/**/*"
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "vender/**/*"
+
+# 日本語のコメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# ドキュメントの無い public class を許可
+Style/Documentation:
+  Enabled: false
+
+# frozen_string_literal の指定強制を解除
+Style/FrozenStringLiteralComment:
+ Enabled: false
+
+# １行の最大
+Layout/LineLength:
+ Max: 160
+
+# 文字列をダブルクォートに統一
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# %w, %iを使用強制を解除（使用しても使用しなくてもOKにする）
+Style/WordArray:
+  Enabled: false
+
+Style/symbolArray:
+  Enabled: false

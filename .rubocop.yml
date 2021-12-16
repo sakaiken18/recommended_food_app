@@ -38,5 +38,9 @@ Style/StringLiterals:
 Style/WordArray:
   Enabled: false
 
-Style/symbolArray:
+Style/SymbolArray:
   Enabled: false
+
+Rails/FilePath:
+  Exclude:
+    - "config/environments/development.rb"

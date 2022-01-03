@@ -7,11 +7,11 @@ user1 = User.create!(email: "satou@example.com", password: "password")
 user2 = User.create!(email: "suzuki@example.com", password: "password")
 user3 = User.create!(email: "tanaka@example.com", password: "password")
 
-user2.posts.create!(content: "沖縄そば")
-user1.posts.create!(content: "海ぶどう")
-user3.posts.create!(content: "ゴーヤーチャンプルー")
-user3.posts.create!(content: "サーターアンダギー")
-user1.posts.create!(content: "タコライス")
+user2.foods.create!(name: "沖縄そば")
+user1.foods.create!(name: "海ぶどう")
+user3.foods.create!(name: "ゴーヤーチャンプルー")
+user3.foods.create!(name: "サーターアンダギー")
+user1.foods.create!(name: "タコライス")
 
 User.create!(email: email, password: password)
 

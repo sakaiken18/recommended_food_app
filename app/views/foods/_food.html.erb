@@ -2,9 +2,11 @@
   <p>【メールアドレス】 <%= food.user.email %></p>
   <p>【料理名】 <%= food.name %></p>
   <p>
-    <%= link_to "詳細", foods_path %>
-    <%= link_to "編集", edit_foods_path(food) %>
-    <%= link_to "削除", foods_path(food), method: :delete, data: { confirm: "削除しますか？" } %>
+    <%= link_to "詳細", food %>
+    <% if current_user.id == food.user_id %>
+      <%= link_to "編集", edit_food_path(food) %>
+      <%= link_to "削除", food_path(food), method: :delete, data: { confirm: "削除しますか？" } %>
+    <% end %>
   </p>
 </div>
 <hr>

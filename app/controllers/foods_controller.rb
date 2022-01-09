@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    food = current_user.foods.create!(food_params)
+    @food = current_user.foods.create!(food_params)
     redirect_to foods_url
   end
 
@@ -18,11 +18,10 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
-    @food = update!(food_params)
+    @food.update!(food_params)
     redirect_to @food
   end
 
@@ -41,5 +40,4 @@ class FoodsController < ApplicationController
   def set_food
     @food = current_user.foods.find(params[:id])
   end
-
 end

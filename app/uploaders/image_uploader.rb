@@ -36,7 +36,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_allowlist
-    %w(jpg gif png)
+    %w[jpg gif png]
   end
 
   # Override the filename of the uploaded files:
@@ -46,7 +46,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   def size_range
-    0..5.megabytes
+    0..(5.megabytes)
   end
 
   def filename

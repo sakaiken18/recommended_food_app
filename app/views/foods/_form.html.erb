@@ -5,6 +5,9 @@
   </div>
   <br>
   <div>
+    <%= form.file_field :image, accept: "image/jpg,image/gif,image/png" %>
+  </div>
+  <div>
     <%= form.label :comment %>
     <%= form.text_area :comment %>
   </div>

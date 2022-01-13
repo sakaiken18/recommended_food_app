@@ -2,7 +2,8 @@ class FoodsController < ApplicationController
   before_action :set_food, only: %i[edit update destroy]
 
   def index
-    @foods = Food.order(:created_at)
+    select_sql = "foods.*, likes.user_id = #{current_user.id} AS liked"
+    @foods = Food.includes(:user).left_join_liked_foods(current_user.id).select(select_sql).order(:created_at)
   end
 
   def new
